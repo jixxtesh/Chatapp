@@ -1,0 +1,35 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-f;
+    font-size: $font-s;
+    font-weight: 400;
+    background-color: $app-background;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include tablet-landscape-up {
+        height: 100vh;
+        overflow: hidden;
+        justify-content: center;
+    }
+}
+.container {
+    display: inline-grid;
+    justify-items: center;
+
+    flex: 1 0 auto;
+    
+    @include tablet-landscape-up {
+        grid-template-columns: 1fr 1.4fr;
+        align-items: center;
+    }
+    @include desktop-up {
+        grid-template-columns: 1fr 1fr;
+        -moz-column-gap: 1.5rem;
+        column-gap: 1.5rem;
+    }
+}
